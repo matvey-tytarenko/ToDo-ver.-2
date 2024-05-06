@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css?family=Sono:200,300,regular,500,600,700,800);
+body {
+  font-family: 'Sono', sans-serif;
+}
+
+.FormContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
+.FormContainer .brand {
+  font-size: 23px;
+  text-align: center;
+}
+
+.FormContainer form {
+  display: flex;
+  flex-direction: column;
+}
+
+.FormContainer form input {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-size: 30px;
+  text-align: center;
+  outline: none;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+}
+
+.FormContainer form .submit {
+  width: 500px;
+  height: 100px;
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FormContainer form .submit button {
+  background: none;
+  font-size: 26px;
+}
+
+.FormContainer form .submit button:hover {
+  border: 2px solid;
+}
+
+.FormContainer form span {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 19px;
+}
+
+.FormContainer form span a:hover {
+  text-decoration: underline;
+  transition: all 0.5s;
+}
