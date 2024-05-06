@@ -1,0 +1,29 @@
+header {
+    background: #000;
+    width: 100vw;
+    height: 7vh;
+    display: block;
+    position: absolute;
+    top: 0;
+
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1px;
+
+        li {
+            list-style: none;
+            padding-left: 50px;
+            font-size: 20px;
+
+            a {
+                color: #fff;
+                transition: all 0.2s ease-in-out;
+            }&:hover {
+                font-size: 25px;
+                
+            }
+        }
+    }
+}

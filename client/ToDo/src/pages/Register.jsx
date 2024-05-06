@@ -53,7 +53,7 @@ function Register() {
     }
     if(data.status === true) {
       localStorage.setItem("todo-app-user", JSON.stringify(data.user))
-      navigate('/');
+      navigate("/verification");
     }
   };
 

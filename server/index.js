@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const router = require('./Routes/UserRoutes')
+const UserRouter = require('./Routes/UserRoutes')
+const ToDoRouter = require('./Routes/ToDoRoutes')
 require("dotenv").config();
 
 // Create App
@@ -10,7 +11,8 @@ const app = express();
 // Middlewares
 app.use(express.json());
 app.use(cors());
-app.use("/api/auth", router);
+app.use("/api/auth", UserRouter);
+app.use(ToDoRouter)
 // DataBase
 mongoose
   .connect(process.env.MONGO_URI)

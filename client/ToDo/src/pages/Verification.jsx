@@ -27,7 +27,7 @@ function Verification() {
       toast.error("Incorect code!", ToastOpt);
       return false;
     } else {
-      navigate("/");
+      navigate('/')
       return true;
     }
   };

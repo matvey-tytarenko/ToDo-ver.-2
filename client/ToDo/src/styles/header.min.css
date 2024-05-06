@@ -1,0 +1,1 @@
+header{background:#000;width:100vw;height:7vh;display:block;position:absolute;top:0}header .menu{display:flex;align-items:center;justify-content:center;padding-top:1px}header .menu li{list-style:none;padding-left:50px;font-size:20px}header .menu li a{color:#fff;transition:all 0.2s ease-in-out}header .menu li:hover{font-size:25px}
