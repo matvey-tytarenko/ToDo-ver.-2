@@ -34,6 +34,7 @@
 .container .add button {
   background: transparent;
   border: none;
+  outline: none;
 }
 
 .container .add button:hover {

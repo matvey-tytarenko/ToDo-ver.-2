@@ -24,6 +24,11 @@ function ToDo() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (isUpdating) {
+      handleUpdate(ToDoId, text, SetToDo, SetText, setIsUpdating);
+    } else {
+      handleAdd(text, SetText, SetToDo);
+    }
     handleValidation();
   };
   const handleChange = (event) => {
@@ -34,10 +39,12 @@ function ToDo() {
     if (!text) {
       toast.error("Field is required!", ToastOpt);
       return false;
-    } else {
+    } 
+    else {
       return true;
     }
   };
+
 
   const ToastOpt = {
     position: "bottom-right",
@@ -90,14 +97,6 @@ function ToDo() {
       .catch((err) => console.error(`Delete Error: ${err}`));
   };
 
-  const Active = (event) => {
-    if (isUpdating) {
-      handleUpdate(ToDoId, text, SetToDo, SetText, setIsUpdating);
-    } else {
-      handleAdd(text, SetText, SetToDo);
-    }
-  };
-
   return (
     <>
       <div className="container">
@@ -115,8 +114,8 @@ function ToDo() {
             />
 
             <div className="add">
-              <button type="submit" onClick={(e) => Active(e)}>
-                {isUpdating ? "Update" : "Add"}
+              <button type="submit">
+               {isUpdating ? "Update" : "Add"}
               </button>
             </div>
           </div>
