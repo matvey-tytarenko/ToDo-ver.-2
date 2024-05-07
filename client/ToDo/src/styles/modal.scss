@@ -1,13 +1,35 @@
 .modal {
     height: 130px;
-    width: 330px;
+    width: 250px;
     position: absolute;
     padding-top: 10px;
     background: #000;
 
     button {
         background: transparent;
+        position: relative;
+        right: 40px;
+
+        &:hover {
+            color: red;
+            font-size: 20px;
+            border: none;
+        }
     }
 
+    a {
+        position: relative;
+        right: 15px;
+        display: flex;
+        padding-top: 5px;
+    }
     
+    .under {
+        width: 150px;
+        position: relative;
+        left: 10px;
+        top: 3px;
+        height: 2px;
+        background: #fff;
+    }
 }

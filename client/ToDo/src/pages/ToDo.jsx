@@ -11,7 +11,6 @@ function ToDo() {
   const [text, SetText] = useState("");
   const [isUpdating, setIsUpdating] = useState(false);
   const [ToDoId, SetToDoId] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     handleGet(SetToDo);
@@ -27,15 +26,18 @@ function ToDo() {
     event.preventDefault();
     handleValidation();
   };
+  const handleChange = (event) => {
+    SetText(event.target.value);
+  };
 
   const handleValidation = () => {
-    if(text != "") {
-      toast.error("Field is reqire!", ToastOpt);
+    if (!text) {
+      toast.error("Field is required!", ToastOpt);
       return false;
     } else {
       return true;
     }
-  }
+  };
 
   const ToastOpt = {
     position: "bottom-right",
@@ -73,7 +75,7 @@ function ToDo() {
         console.log(data);
         SetText("");
         SetIsUpdating(false);
-        getAllToDo(setToDo);
+        handleGet(setToDo);
       })
       .catch((err) => console.error(`Update Error: ${err}`));
   };
@@ -88,16 +90,13 @@ function ToDo() {
       .catch((err) => console.error(`Delete Error: ${err}`));
   };
 
-  const handleChange = (event) => {
-    if(text !== "") {
-
+  const Active = (event) => {
+    if (isUpdating) {
+      handleUpdate(ToDoId, text, SetToDo, SetText, setIsUpdating);
     } else {
-      SetText(event.target.value);
-      return true;
+      handleAdd(text, SetText, SetToDo);
     }
-  }
-
-  
+  };
 
   return (
     <>
@@ -115,32 +114,20 @@ function ToDo() {
               onChange={(e) => handleChange(e)}
             />
 
-            <div
-              className="add"
-              onClick={
-                isUpdating
-                  ? () =>
-                      handleUpdate(
-                        ToDoId,
-                        text,
-                        SetToDo,
-                        SetText,
-                        setIsUpdating
-                      )
-                  : () => handleAdd(text, SetText, SetToDo)
-              }
-            >
-              {isUpdating ? "Update" : "Add"}
+            <div className="add">
+              <button type="submit" onClick={(e) => Active(e)}>
+                {isUpdating ? "Update" : "Add"}
+              </button>
             </div>
           </div>
 
           <div className="list">
-            {ToDo.map((item) => (
+            {ToDo.map(({ _id, text }) => (
               <ToDoComponent
-                key={item._id}
-                text={item.text}
-                updateMode={() => UpdateMode(item._id, item.text)}
-                deleteToDo={() => handleDelete(item._id, SetToDo)}
+                key={_id}
+                text={text}
+                updateMode={() => UpdateMode(_id, text)}
+                deleteToDo={() => handleDelete(_id, SetToDo)}
               />
             ))}
           </div>

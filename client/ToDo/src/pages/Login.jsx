@@ -34,7 +34,7 @@ function Login() {
   };
 
   // useEffect(() => {
-  //   if (localStorage.getItem("chat-app-user")) {
+  //   if (localStorage.getItem("todo-app-user")) {
   //     navigate("/");
   //   }
   // }, []);

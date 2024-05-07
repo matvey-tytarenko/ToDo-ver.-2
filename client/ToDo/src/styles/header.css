@@ -36,7 +36,3 @@ header .menu li i {
 header .menu li .arrow {
   padding-left: 20px;
 }
-
-header .menu .active {
-  transition: all 0.2s ease-in-out;
-}

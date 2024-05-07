@@ -1,1 +1,1 @@
-.modal{height:130px;width:330px;position:absolute;padding-top:10px;background:#000}.modal button{background:transparent}
+.modal{height:130px;width:250px;position:absolute;padding-top:10px;background:#000}.modal button{background:transparent;position:relative;right:40px}.modal button:hover{color:red;font-size:20px;border:none}.modal a{position:relative;right:15px;display:flex;padding-top:5px}.modal .under{width:150px;position:relative;left:10px;top:3px;height:2px;background:#fff}
