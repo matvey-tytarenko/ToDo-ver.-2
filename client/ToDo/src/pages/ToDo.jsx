@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import "../styles/Todo.scss";
 import ToDoComponent from "../components/ToDoComponent";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
 import Header from "../components/Header";
 import { addToDo, deleteToDo, getAllToDo, updateToDo } from "../utils/API";
+import { ToastContainer, toast } from "react-toastify";
 
 function ToDo() {
   const [ToDo, SetToDo] = useState([]);
@@ -45,7 +45,6 @@ function ToDo() {
     }
   };
 
-
   const ToastOpt = {
     position: "bottom-right",
     autoClose: 5000,
@@ -72,7 +71,9 @@ function ToDo() {
         SetText("");
         handleGet(SetToDo);
       })
-      .catch((err) => console.error(`Add Error: ${err}`));
+      .catch((err) => {
+        toast.error(`Add Error: ${err}`);
+      });
   };
 
   const handleUpdate = (ToDo_id, text, setToDo, SetText, SetIsUpdating) => {
@@ -84,8 +85,9 @@ function ToDo() {
         SetIsUpdating(false);
         handleGet(setToDo);
       })
-      .catch((err) => console.error(`Update Error: ${err}`));
+      .catch((err) => toast.error(`Update Error: ${err}`));
   };
+
 
   const handleDelete = (_id, SetToDo) => {
     axios
@@ -94,7 +96,7 @@ function ToDo() {
         handleGet(SetToDo);
         console.log(data);
       })
-      .catch((err) => console.error(`Delete Error: ${err}`));
+      .catch((err) => toast.error(`Delete Error: ${err}`));
   };
 
   return (
@@ -114,9 +116,7 @@ function ToDo() {
             />
 
             <div className="add">
-              <button type="submit">
-               {isUpdating ? "Update" : "Add"}
-              </button>
+              <button type="submit">{isUpdating ? "Update" : "Add"}</button>
             </div>
           </div>
 
@@ -132,8 +132,8 @@ function ToDo() {
           </div>
         </form>
       </div>
-      <Header />
       <ToastContainer />
+      <Header />
     </>
   );
 }

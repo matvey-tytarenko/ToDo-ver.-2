@@ -49,6 +49,7 @@ function ToDoComponent({ text, updateMode, deleteToDo }) {
     "shit",
     "shite",
     "slut",
+    "suka",
     "whore",
     "spastic",
     "Jesus",
@@ -57,6 +58,15 @@ function ToDoComponent({ text, updateMode, deleteToDo }) {
     "twat",
     "wanker",
     "jerk",
+    "хуй",
+    "долбоёб",
+    "даун",
+    "пидор",
+    "хуёвый",
+    "пизда",
+    "россия",
+    "путин",
+    "параша",
   ];
 
   const textContainsSwearWord = (text) => {
