@@ -28,3 +28,15 @@ header .menu li a {
 header .menu li:hover {
   font-size: 25px;
 }
+
+header .menu li i {
+  padding-right: 15px;
+}
+
+header .menu li .arrow {
+  padding-left: 20px;
+}
+
+header .menu .active {
+  transition: all 0.2s ease-in-out;
+}

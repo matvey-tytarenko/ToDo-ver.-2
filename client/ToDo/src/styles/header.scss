@@ -22,8 +22,19 @@ header {
                 transition: all 0.2s ease-in-out;
             }&:hover {
                 font-size: 25px;
-                
             }
+
+            i {
+                padding-right: 15px;
+            }
+
+            .arrow {
+                padding-left: 20px;
+            }
+        }
+
+        .active {
+            transition: all 0.2s ease-in-out;
         }
     }
 }

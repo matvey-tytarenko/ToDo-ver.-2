@@ -11,6 +11,7 @@ function ToDo() {
   const [text, SetText] = useState("");
   const [isUpdating, setIsUpdating] = useState(false);
   const [ToDoId, SetToDoId] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     handleGet(SetToDo);
@@ -87,6 +88,17 @@ function ToDo() {
       .catch((err) => console.error(`Delete Error: ${err}`));
   };
 
+  const handleChange = (event) => {
+    if(text !== "") {
+
+    } else {
+      SetText(event.target.value);
+      return true;
+    }
+  }
+
+  
+
   return (
     <>
       <div className="container">
@@ -100,7 +112,7 @@ function ToDo() {
               type="text"
               placeholder="Add ToDo..."
               value={text}
-              onChange={(e) => SetText(e.target.value)}
+              onChange={(e) => handleChange(e)}
             />
 
             <div

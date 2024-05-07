@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Verification from './pages/Verification'
 import Private_Office from './pages/Private Office'
+import Settings from './pages/Settings'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/verification' element={<Verification />} />
         <Route path='/office' element={<Private_Office />} />
+        <Route path='/settings' element={<Settings />} />
        </Routes>
       </BrowserRouter>
     </>

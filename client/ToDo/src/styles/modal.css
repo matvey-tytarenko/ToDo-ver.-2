@@ -1,0 +1,11 @@
+.modal {
+  height: 130px;
+  width: 330px;
+  position: absolute;
+  padding-top: 10px;
+  background: #000;
+}
+
+.modal button {
+  background: transparent;
+}

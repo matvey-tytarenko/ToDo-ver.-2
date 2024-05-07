@@ -57,7 +57,7 @@ function Login() {
       toast.error(" Incorect username or password!", ToastOpt);
       return false;
     } else {
-      return true
+      return true;
     }
   };
 
