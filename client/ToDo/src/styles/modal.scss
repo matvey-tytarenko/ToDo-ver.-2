@@ -1,5 +1,5 @@
 .modal {
-    height: 130px;
+    height: 50px;
     width: 250px;
     position: absolute;
     padding-top: 10px;
@@ -15,21 +15,5 @@
             font-size: 20px;
             border: none;
         }
-    }
-
-    a {
-        position: relative;
-        right: 15px;
-        display: flex;
-        padding-top: 5px;
-    }
-    
-    .under {
-        width: 150px;
-        position: relative;
-        left: 10px;
-        top: 3px;
-        height: 2px;
-        background: #fff;
     }
 }

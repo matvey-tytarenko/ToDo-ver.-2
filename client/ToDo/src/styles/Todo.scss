@@ -70,4 +70,22 @@
             color: red;
         }
     }
+
+    .checkbox-container {
+    width: 40px;
+    height: 40px;
+    background: #4c4c4c;
+    display: flex;
+    position: relative;
+    right: 50px;
+    bottom: 40px;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.checkbox-container input {
+    display: none;
+}
+
 }

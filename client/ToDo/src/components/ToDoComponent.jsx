@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import "../styles/Todo.scss";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -69,6 +69,8 @@ function ToDoComponent({ text, updateMode, deleteToDo }) {
     "параша",
   ];
 
+  const [isChecked, setIsChecked] = useState(false);
+
   const textContainsSwearWord = (text) => {
     for (let i = 0; i < swear_words.length; i++) {
       if (text.toLowerCase().includes(swear_words[i])) {
@@ -90,10 +92,36 @@ function ToDoComponent({ text, updateMode, deleteToDo }) {
     return censoredText.join(" ");
   };
 
+  const checkboxRef = useRef(null);
+
+  const handleCheckboxChanged = () => {
+    setIsChecked(!isChecked);
+    this.className.add("active");
+  };
+
+  const TaskCompliteStyle = {
+    textDecoration: isChecked ? "line-through" : "none",
+  };
+
+  const checkBoxStyles = {
+    background: isChecked ? "green" : ""
+  }
+
   return (
     <>
       <div className="todo">
-        <div className="text">{censored()}</div>
+        <div className="text" style={TaskCompliteStyle}>
+          {censored()}
+          <div className="checkbox-container" onClick={handleCheckboxChanged} style={checkBoxStyles}>
+            <input
+              type="checkbox"
+              id="checkbox"
+              className="checkbox"
+              checked={isChecked}
+              onChange={() => {}} // Не требуется обработчик изменения
+            />
+          </div>
+        </div>
         <div className="icons">
           <i className="fas fa-pen-to-square pen" onClick={updateMode}></i>
           <i className="fas fa-trash-can trash" onClick={deleteToDo}></i>

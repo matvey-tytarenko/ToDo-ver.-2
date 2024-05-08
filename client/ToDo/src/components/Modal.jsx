@@ -8,13 +8,6 @@ function Modal({ user, logout }) {
     <div className="modal">
       <ul className="dropdown_menu">
         <li>
-          <Link to="/office">My Office</Link>
-        </li>
-        <li>
-          <Link to="/settings">Settings</Link>
-        </li>
-        <div className="under"></div>
-        <li>
           <button onClick={logout}>Log out</button>
         </li>
       </ul>
